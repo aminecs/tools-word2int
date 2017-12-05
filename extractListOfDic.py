@@ -1,11 +1,9 @@
 import json
 
-def readFileMap(fileArg):
-    with open(fileArg) as fileInput:
-        return fileInput.read()
 
 def listofDico(path):
-    map = readFileMap(path)
+    with open(fileArg) as fileInput:
+        map = fileInput.read()
     myJson = json.loads(map)
     return myJson ['nodes']
 

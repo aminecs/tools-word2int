@@ -1,7 +1,7 @@
 import linecache, ast, re
 
-def readFileWE(fileArg):
-    with open(fileArg) as fileInput:
+def readFileWE(path):
+    with open(path) as fileInput:
         with open('wikiStr.embeddings', 'xt') as fileOutput:
             for line in fileInput:
                 repl = matchInt(line)
@@ -19,7 +19,7 @@ def matchInt(line):
     string = getLabel(found)
     return p.sub(string, line)
 
-def main(fileArg):
-    readFileWE(fileArg)
+def main(path):
+    readFileWE(path)
 
 main('sampleEmb.embeddings')

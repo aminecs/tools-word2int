@@ -1,7 +1,7 @@
 import re
 
-def readFile(fileArg):
-    with open(fileArg) as fileInput:
+def readFile(path):
+    with open(path) as fileInput:
         with open('networkUnweighted.edgelist', 'xt') as fileOutput:
             for line in fileInput:
                 lineWithoutW = matchInt(line)
@@ -17,8 +17,8 @@ def matchInt(oneLine):
     p = re.compile(theRegex)
     return p.findall(oneLine)
 
-def main(fileArg):
-    readFile(fileArg)
+def main(path):
+    readFile(path)
 
 
 main('network')
